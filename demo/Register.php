@@ -9,7 +9,7 @@ class Register {
 	protected static $content = [];
 
     /**
-     * 将一个类通过工厂方法挂载到树上
+     * 将一个类挂载到树上
      * @param $key
      * @param $instance
      */
