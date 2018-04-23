@@ -24,3 +24,5 @@ $aah = Register::get('aah');
 $aah->dance('拉丁');
 var_dump($aah == $girl1);  //true
 //$girl3 = new Girl();        报错
+Register::_unset('aah');
+var_dump(Register::get('aah'));

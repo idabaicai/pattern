@@ -25,11 +25,11 @@ class Register {
      */
 	public static function get($key)
 	{
-		return self::$content[$key];
+		return empty(self::$content[$key]) ? null : self::$content[$key];
 	}
 	//销毁一个对象
-	public function _unset($key)
+	public static function _unset($key)
 	{
-		__unset(self::$content[$key]);
+		unset(self::$content[$key]);
 	}
 }
