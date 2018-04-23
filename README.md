@@ -9,7 +9,7 @@
 
 5.理解设计模式，抽象思维很重要。
 
-6. 运行结果:
+6.运行结果:
 I am Index.
 
 bool(true) I can song三生三世
@@ -17,3 +17,4 @@ bool(true) I can song三生三世
 I can dance拉丁bool(true) 
 
 NULL
+#The end.
