@@ -8,3 +8,8 @@
 4.注册树模式可以利用工厂模式一起使用实例化一个单例类，并挂载一个树上set()，需要的时候拿下来get()。
 
 5.理解设计模式，抽象思维很重要。
+
+6. 运行结果:
+I am Index.
+bool(true) I can song三生三世
+I can dance拉丁bool(true) NULL
