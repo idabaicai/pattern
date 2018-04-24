@@ -7,6 +7,7 @@
  */
 namespace demo;
 use lib\Db;
+use lib\database\Mysqli;
 
 define('BASEDIR',__DIR__);  //根目录
 
@@ -32,9 +33,17 @@ var_dump(Register::get('aah'));
 echo '<hr />';
 var_dump($aah);
 var_dump($girl);
+
 //数据库链式操作
 $db = Db::getInstance();
 var_dump($db);
 $list = $db->select();
 //$list = $db->name('pattern')->where("id = 1")->select();
+var_dump($list);
+echo "<hr />";
+
+//适配器模式
+$db = new Mysqli();
+$db->connect('localhost','root','root','test');
+$list = $db->query('select * from pattern');
 var_dump($list);

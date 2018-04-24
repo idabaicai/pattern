@@ -8,7 +8,6 @@
 
 namespace lib;
 
-
 class Db
 {
     protected static $host = 'localhost';
