@@ -7,8 +7,8 @@ namespace demo;
 use demo\Girl;
 Class Factory {
     //利用工厂方法制造指定的类
-	public static function create()
+	public static function create($name)
     {
-        return Girl::getInstance();
+        return Girl::getInstance($name);
     }
 }

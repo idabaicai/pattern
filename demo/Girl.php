@@ -14,21 +14,24 @@ class Girl
     //当前类的唯一实例
     protected static $instance;
 
-    //禁用构造方法
+    //将构造方法设置为私有
     private function __construct($name)
     {
         $this->name = $name;
     }
 
-    public function __clone()
-    {
-        // TODO: Implement __clone() method.
-    }
 
     //获取当前类的唯一实例
     public static function getInstance($name = 'YY')
     {
-        return self::$instance instanceof self ? self::$instance : new self($name);
+        //错误的单例模式，每次都要实例化，因为没有保存当前实例
+        //return self::$instance instanceof self ? self::$instance : new self($name);
+        if (self::$instance instanceof self) {
+            return self::$instance;
+        } else {
+            self::$instance = new self($name);
+            return self::$instance;
+        }
     }
 
     //Girl可以唱歌
