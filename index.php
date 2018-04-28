@@ -14,7 +14,6 @@ define('BASEDIR',__DIR__);  //根目录
 include BASEDIR.'/demo/Loader.php'; //引入Loader.php
 spl_autoload_register('\\demo\\Loader::autoload'); //注册给定的函数作为 __autoload 的实现
 
-Index::index();
 
 $girl = Factory::create('girl');
 $girl1 = Factory::create('girl1');
@@ -41,9 +40,3 @@ $list = $db->select();
 //$list = $db->name('pattern')->where("id = 1")->select();
 var_dump($list);
 echo "<hr />";
-
-//适配器模式
-$db = new Mysqli();
-$db->connect('localhost','root','root','test');
-$list = $db->query('select * from pattern');
-var_dump($list);
