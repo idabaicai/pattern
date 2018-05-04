@@ -1,5 +1,6 @@
 <?php
 /**
+ *适配器模式、策略模式
  * Created by PhpStorm.
  * User: liuhui
  * Date: 18-4-28
@@ -11,9 +12,10 @@ include BASEDIR.'/demo/Loader.php';
 spl_autoload_register('\\demo\\Loader::autoload');
 
 //适配器模式
-$db = new Mysqli();
-$db->connect('localhost','root','w050762.w','test');
+$db = new \lib\database\Mysqli();
+$db->connect('localhost','root','root','test');
 $list = $db->query('select * from pattern');
+$list = $db->fetchArray($list);
 var_dump($list);
 echo '<hr />';
 

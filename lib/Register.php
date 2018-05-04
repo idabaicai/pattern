@@ -2,7 +2,7 @@
 /**
  *注册树类
  */
-namespace demo;
+namespace lib;
 
 class Register {
 	//容器

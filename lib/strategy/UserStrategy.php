@@ -1,6 +1,6 @@
 <?php
 /**
- * 策略模式
+ * 策略模式接口
  * Created by PhpStorm.
  * User: liuhui
  * Date: 18-4-28

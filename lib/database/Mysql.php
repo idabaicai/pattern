@@ -22,6 +22,11 @@ class Mysql implements InDatabase
     {
         return mysql_query($sql,$this->con);
     }
+    function fetchArray($result)
+    {
+        return mysql_fetch_array($result);
+    }
+
     function close()
     {
         // TODO: Implement close() method.

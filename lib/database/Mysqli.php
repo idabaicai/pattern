@@ -12,9 +12,16 @@ namespace lib\database;
 class Mysqli implements InDatabase
 {
     protected static $con;
+
+    /**
+     * @param $host
+     * @param $user
+     * @param $password
+     * @param $db
+     * @return mixed|void
+     */
     function connect($host, $user, $password, $db)
     {
-        // TODO: Implement connect() method.
         $con = mysqli_connect($host,$user,$password,$db);
         if (!$con) {
             echo mysqli_error().PHP_EOL;
@@ -25,12 +32,15 @@ class Mysqli implements InDatabase
     }
     function query($sql)
     {
-        // TODO: Implement query() method.
         return mysqli_query(self::$con,$sql);
     }
+    function fetchArray($result)
+    {
+        return mysqli_fetch_array($result);
+    }
+
     function close()
     {
-        // TODO: Implement close() method.
         mysqli_close(self::$con);
     }
 }

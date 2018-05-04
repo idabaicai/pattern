@@ -1,13 +1,15 @@
 <?php
 /**
+ * 注册树、工厂、数据库链式操作
  * Created by PhpStorm.
  * User: icandebug@gmail.com
  * Date: 2018/4/23
  * Time: 9:22
  */
-namespace demo;
+
 use lib\Db;
-use lib\database\Mysqli;
+use lib\Factory;
+use lib\Register;
 
 define('BASEDIR',__DIR__);  //根目录
 
@@ -17,7 +19,7 @@ spl_autoload_register('\\demo\\Loader::autoload'); //注册给定的函数作为
 
 $girl = Factory::create('girl');
 $girl1 = Factory::create('girl1');
-var_dump($girl == $girl1);  //true
+var_dump($girl,$girl1);  //true
 $girl->song();
 echo '<hr />';
 
