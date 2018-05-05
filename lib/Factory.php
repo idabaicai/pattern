@@ -4,16 +4,25 @@
  */
 namespace lib;
 
-use lib\database\Mysqli;
+use demo\Girl;
+use demo\User;
 
 Class Factory {
     //利用工厂方法制造指定的类
 	public static function create($name)
     {
-        return \demo\Girl::getInstance($name);
+        return Girl::getInstance($name);
     }
-    public static function getInstance()
+    //获取唯一User类
+    public static function getUser($id)
     {
-        return new Mysqli();
+        $key = 'user_'.$id;
+        $user = Register::get($key);
+        if (!$user) {
+            Register::set($key,new User($id));
+        } else {
+            return $user;
+        }
+        return Register::get($key);
     }
 }
